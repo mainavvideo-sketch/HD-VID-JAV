@@ -11,7 +11,6 @@ import Login from "./Pages/loginpage.jsx";
 import ProtectedRoute from "./component/protectrout/protectrout.jsx";
 import SearchPage from "./Pages/search.jsx";
 import Upload from "./Pages/upload.jsx";
-import SeriesPage from "./Pages/searies.jsx";
 
 const router = createHashRouter(
   [
