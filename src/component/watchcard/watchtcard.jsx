@@ -22,7 +22,7 @@ function WatchCard({ video }) {
     <div className="watch-card">
       {!isPlaying && (
         <>
-          <img
+         <img
             src={video.thumbnail}
             className="watch-thumnail"
             alt="Video thumbnail"
@@ -37,7 +37,6 @@ function WatchCard({ video }) {
           <Video
             ref={videoRef}
             src={video.src}
-            poster={video.thumbnail}
             playsInline
             autoPlay={isPlaying}
             disableRemotePlayback

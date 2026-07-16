@@ -11,6 +11,8 @@ import Login from "./Pages/loginpage.jsx";
 import ProtectedRoute from "./component/protectrout/protectrout.jsx";
 import SearchPage from "./Pages/search.jsx";
 import Upload from "./Pages/upload.jsx";
+import StudioPage from "./Pages/studio.jsx";
+import SeriesPage from "./Pages/series.jsx";
 
 const router = createHashRouter(
   [
@@ -35,17 +37,22 @@ const router = createHashRouter(
           element: <WatchPage />,
         },
         {
-          path: "series/:name",
-          element: <SeriesPage />,
-        },
-        {
           path: "actress/:name",
           element: <ActressPage />,
+        },
+        {
+          path: "studio/:name",
+          element: <StudioPage />,
+        },
+        {
+          path: "series/:name",
+          element: <SeriesPage />,
         },
         {
           path: "search/:keyword",
           element: <SearchPage />,
         },
+        
         {
           path: "upload",
           element: <Upload />,

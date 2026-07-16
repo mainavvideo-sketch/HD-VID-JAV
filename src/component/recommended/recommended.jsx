@@ -12,7 +12,7 @@ function RecommendedVideos({ videos, currentVideo }) {
     }
 
     // Same Sub Studio
-    if (currentVideo.subStudio && currentVideo.subStudio === video.subStudio) {
+    if (currentVideo.series && currentVideo.series === video.series) {
       score += 50;
     }
 

@@ -121,8 +121,8 @@ body {
   padding: 2px 5px;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 }
@@ -163,10 +163,6 @@ span {
   padding: 0px 5px 2px 5px;
   border-radius: 5px;
 }
-span:hover {
-  background-color: #d8201d;
-  color: white;
-}
 
 .loading2 {
   margin-top: 80px;
@@ -176,6 +172,11 @@ span:hover {
 /* Responsive Design */
 
 @media (max-width: 768px) {
+  .admin-content{
+    width: 100%;
+  }
+
+
   .video-card {
     max-width: calc((100%) / 1);
   }

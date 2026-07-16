@@ -16,16 +16,6 @@ function WatchInfo({ video }) {
             </Link>
           </span>
         </p>
-        {video.subStudio && (
-          <p>
-            <strong>Sub Studio:</strong>{" "}
-            <span>
-              <Link to={`/studio/${encodeURIComponent(video.subStudio)}`}>
-                {video.subStudio}
-              </Link>
-            </span>
-          </p>
-        )}
         <p>
           <strong>Actress:</strong>{" "}
           {video.actress.map((name, index) => (
@@ -34,6 +24,16 @@ function WatchInfo({ video }) {
             </span>
           ))}
         </p>
+        {video.series && (
+          <p>
+            <strong>Series:</strong>{" "}
+            <span>
+              <Link to={`/series/${encodeURIComponent(video.series)}`}>
+                {video.series}
+              </Link>
+            </span>
+          </p>
+        )}
       </div>
     </div>
   );

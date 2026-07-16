@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { HouseDoorFill, Fire, CloudUploadFill } from "react-bootstrap-icons";
+import { HouseDoorFill,Gitlab, CloudUploadFill } from "react-bootstrap-icons";
 import { Link, NavLink } from "react-router-dom";
 import hero from "../../assets/logo.png";
 import SearchForm from "../searchform/search";
@@ -27,14 +27,13 @@ function Navbar() {
               <HouseDoorFill />
             </NavLink>
           </li>
-
           <li>
-            <NavLink
-              to="/trending"
-              className={({ isActive }) => (isActive ? "trending" : "links")}
+            <a
+              href="https://mainavvideo-sketch.github.io/HD-VID/"
+              className="links"
             >
-              <Fire />
-            </NavLink>
+              <Gitlab />
+            </a>
           </li>
 
           {/* Show Upload icon only for Admin */}

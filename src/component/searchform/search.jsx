@@ -23,7 +23,7 @@ function SearchForm() {
   };
 
   useEffect(() => {
-    fetch("/data/videos.json")
+     fetch(`${import.meta.env.BASE_URL}data/videos.json`)
       .then((res) => res.json())
       .then((data) => setVideos(data));
   }, []);
@@ -125,7 +125,7 @@ function SearchForm() {
                   clearSuggestions();
                 }}
               >
-                <img src={video.thumbnail_s} />
+                <img src={video.thumbnail} />
                 <h2 className="video-title-s">{video.title}</h2>
               </div>
             ))}

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import VideoCard from "../component/videocard/videocard";
-import loading2 from "../assets/loading2.gif"
 import Pagination from "../component/pagination/pagination";
-
+import loading2 from "../assets/loading2.gif";
 import { useSearchParams } from "react-router-dom";
 const videosPerPage = 20;
 
@@ -13,22 +12,12 @@ function Home() {
   const currentPage = Number(searchParams.get("page")) || 1;
 
   useEffect(() => {
-    fetch("/data/videos.json")
+    fetch(`${import.meta.env.BASE_URL}data/videos.json`)
       .then((res) => res.json())
       .then((data) => {
-        const sortedVideos = data.sort(
-          (a, b) => new Date(b.date) - new Date(a.date),
-        );
-        setVideos(sortedVideos);
+        setVideos(data);
       });
   }, []);
-
-  const lastIndex = currentPage * videosPerPage;
-  const firstIndex = lastIndex - videosPerPage;
-
-  const currentVideos = videos.slice(firstIndex, lastIndex);
-
-  const totalPages = Math.ceil(videos.length / videosPerPage);
 
   if (videos.length === 0) {
     return (
@@ -39,6 +28,13 @@ function Home() {
       </div>
     );
   }
+
+  const lastIndex = currentPage * videosPerPage;
+  const firstIndex = lastIndex - videosPerPage;
+
+  const currentVideos = videos.slice(firstIndex, lastIndex);
+
+  const totalPages = Math.ceil(videos.length / videosPerPage);
 
   return (
     <div className="main">
